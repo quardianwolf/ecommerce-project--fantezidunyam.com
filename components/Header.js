@@ -58,7 +58,7 @@ const Header = ({ isErrorPage }) => {
         <Link href="/">
             ANA SAYFA
           </Link>
-          <Link href="/products">
+          <Link href="/tumurunler">
             KADIN
           </Link>
         </nav>
