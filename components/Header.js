@@ -2,19 +2,19 @@ import { useState, useEffect, useRef } from 'react';
 import useOnClickOutside from 'use-onclickoutside';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 
 
 
-const Header = ({ isErrorPage, urunlers }) => {
+const Header = ({ isErrorPage }) => {
   const router = useRouter();
-  const arrayPaths = ['/tumurunler'];  
+  const arrayPaths = ['/'];  
 
   const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) || isErrorPage ) ? false : true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
   const searchRef = useRef(null);
+
   const headerClass = () => {
     if(window.pageYOffset === 0) {
       setOnTop(true);
@@ -45,25 +45,27 @@ const Header = ({ isErrorPage, urunlers }) => {
   // on click outside
   useOnClickOutside(navRef, closeMenu);
   useOnClickOutside(searchRef, closeSearch);
-  
+
   return(
-    
     <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
       <div className="container">
         <Link href="/">
-          <Image src='/images/logo.png' alt='aa' className='w-auto h-full '/>
+          <a><h1 className="site-logo">
+          <img src='images/logo.png' className='h-40 w-auto'/>  
+          </h1></a>
         </Link>
         <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
-          <Link href="/tumurunler">
-            <Link>Kadın</Link>
+        <Link href="/">
+            ANA SAYFA
+          </Link>
+          <Link href="/products">
+            KADIN
           </Link>
         </nav>
 
         <div className="site-header__actions">
-          <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
-             
-           
-          </button>                   
+         
+         
           <button 
             onClick={() => setMenuOpen(true)} 
             className="site-header__btn-menu">
@@ -74,16 +76,6 @@ const Header = ({ isErrorPage, urunlers }) => {
     </header>
   )
 };
-
-export const getServerSideProps = async () => {
-  const query = '*[_type == "urunler"]';
-  const urunlers = await client.fetch(query);
-
-  return {
-    props: { urunlers }
-  }
-
-}
 
 
 export default Header;

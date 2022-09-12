@@ -3,8 +3,7 @@ import { urlFor, client } from '../lib/client';
 import { Dialog, Disclosure, Popover, Tab, Transition } from '@headlessui/react';
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/20/solid';
-import Link from 'next/link';
-import Image from 'next/image';
+
 
 const filters = [
     {
@@ -44,7 +43,6 @@ const Tumurunler = ({urunlers}) => {
           <span className="text-sm font-medium text-gray-700">Filters</span>
           <PlusIcon className="ml-1 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
         </button>
-
         <div className="hidden lg:block">
           <form className="space-y-10 divide-y divide-gray-200">
             {filters.map((section, sectionIdx) => (
@@ -86,7 +84,7 @@ const Tumurunler = ({urunlers}) => {
               className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
             >
               <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
-                <Image
+                <img
                   src={urlFor(urunler.image[0])}
                   alt='aa'
                   className="h-full w-full object-cover object-center sm:h-full sm:w-full"
@@ -94,12 +92,10 @@ const Tumurunler = ({urunlers}) => {
               </div>
               <div className="flex flex-1 flex-col space-y-2 p-4">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <Link href={`urunler/${urunler.slug.current}`}>
-
-                  
+                  <a href={`urunler/${urunler.slug.current}`}>                  
                     <span aria-hidden="true" className="absolute inset-0" />
                     {urunler.name}
-                  </Link>
+                  </a>
                 </h3>
                 <p className="text-sm text-gray-500">{urunler.description}</p>
                 <div className="flex flex-1 flex-col justify-end">

@@ -3,8 +3,7 @@ import SwiperCore, {EffectFade, Navigation} from 'swiper';
 import { urlFor } from '../lib/client';
 import { SliderTooltip } from 'rc-slider';
 import Head from 'next/head';
-import Image from "next/image";
-import Link from 'next/link';
+
 
 SwiperCore.use([EffectFade, Navigation]);
 
@@ -17,12 +16,12 @@ const PageIntro = ({slider : {image, manset_1, manset_2, manset_3, buton_adi1, b
         <SwiperSlide>
           <div className="page-intro__slide mx-auto flex">
             <div className='container'>
-              <Image src={urlFor(image && image[0])} alt='aa' className='w-auto h-full  object-cover  ml-auto'/>
+              <img src={urlFor(image && image[0])} alt='aa' className='w-auto h-full  object-cover  ml-auto'/>
             </div>
             <div className="container">
               <div className="page-intro__slide__content">
                 <h2>{manset_1}</h2>
-                <Link href={buton_link1} className="btn-shop"><i className="fa-solid fa-arrow-right"></i>{buton_adi1}</Link>
+                <a  href={buton_link1} className="btn-shop"><i className="fa-solid fa-arrow-right"></i>{buton_adi1}</a>
               </div>
             </div>
           </div>
@@ -31,12 +30,12 @@ const PageIntro = ({slider : {image, manset_1, manset_2, manset_3, buton_adi1, b
         <SwiperSlide>
           <div className="page-intro__slide flex">
             <div className='container'>
-            <Image src={urlFor(image && image[1])} alt='aa' className='w-auto h-full  object-cover  ml-auto'/>
+            <img src={urlFor(image && image[1])} alt='aa' className='w-auto h-full  object-cover  ml-auto'/>
             </div>
             <div className="container">
               <div className="page-intro__slide__content">
                 <h2>{manset_2}</h2>
-                <Link href={buton_link2} className="btn-shop"><i className="fa-solid fa-arrow-right"></i>{buton_adi2}</Link>
+                <a href={buton_link2} className="btn-shop"><i className="fa-solid fa-arrow-right"></i>{buton_adi2}</a>
               </div>
             </div>
           </div>
@@ -45,12 +44,12 @@ const PageIntro = ({slider : {image, manset_1, manset_2, manset_3, buton_adi1, b
         <SwiperSlide>
           <div className="page-intro__slide flex">
             <div className='container flex-1'>
-            <Image src={urlFor(image && image[2])} alt='aa' className='w-auto h-full  object-cover  ml-auto'/>
+            <img src={urlFor(image && image[2])} alt='aa' className='w-auto h-full  object-cover  ml-auto'/>
             </div>
             <div className="container flex-1">
               <div className="page-intro__slide__content">
                 <h2>{manset_3}</h2>
-                <Link href={buton_link3} className="btn-shop"><i className="fa-solid fa-arrow-right"></i>{buton_adi3}</Link>
+                <a href={buton_link3} className="btn-shop"><i className="fa-solid fa-arrow-right"></i>{buton_adi3}</a>
               </div>
             </div>
           </div>

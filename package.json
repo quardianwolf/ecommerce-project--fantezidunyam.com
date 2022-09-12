@@ -28,7 +28,7 @@
     "use-onclickoutside": "^0.4.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.9",
     "eslint": "8.23.0",
     "eslint-config-next": "12.3.0",
     "postcss": "^8.4.16",

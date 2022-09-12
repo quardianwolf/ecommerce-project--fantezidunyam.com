@@ -1,7 +1,6 @@
 import { image } from "fontawesome";
-import Link from "next/link";
 import { urlFor, client } from "../lib/client";
-import Image from "next/image";
+
 
 
 const Footer = ({footer}) => {
@@ -11,26 +10,26 @@ const Footer = ({footer}) => {
       <div className="container">
         <div className="site-footer__top">
           <div className="site-footer__description">
-            <Image src={urlFor(logo)} alt="aa" />
+            <img src={urlFor(logo)}  />
             <p>{firma_aciklama}</p>
             <ul className="site-footer__social-networks">
-              <li><Link href={`${facebook}`}><i className="icon-facebook"></i></Link></li>
-              <li><Link href={`${twitter}`}><i className="icon-twitter"></i></Link></li>
-              <li><Link href={`${instagram}`}><i className="icon-instagram"></i></Link></li>
+              <li><a href={`${facebook}`}><i className="icon-facebook"></i></a></li>
+              <li><a href={`${twitter}`}><i className="icon-twitter"></i></a></li>
+              <li><a href={`${instagram}`}><i className="icon-instagram"></i></a></li>
             </ul>
           </div>
 
           <div className="site-footer__links">
             <ul>
               <li>Bizi takip et!</li>
-              <li><Link href={`${facebook}`}><i className="icon-facebook"></i>Facebook`&apos;ta Biz!</Link></li>
-              <li><Link href={`${twitter}`}><i className="icon-twitter"></i>Twitter`&apos;da Biz!</Link></li>
-              <li><Link href={`${instagram}`}><i className="icon-instagram">İnstagram`&apos;da Biz!</i></Link></li>
+              <li><a href={`${facebook}`}><i className="icon-facebook">Facebook`&apos;ta Biz!</i></a></li>
+              <li><a href={`${twitter}`}><i className="icon-twitter">Twitter`&apos;da Biz!</i></a></li>
+              <li><a href={`${instagram}`}><i className="icon-instagram">İnstagram`&apos;da Biz!</i></a></li>
             </ul>
             <ul>
               <li>Bize Ulaş!</li>
-              <li><Link href={`mailto:${email}`}>{email}</Link></li>
-              <li><Link href={`tel:${telefon}`}>{telefon}</Link></li>
+              <li><a href={`mailto:${email}`}>{email}</a></li>
+              <li><a href={`tel:${telefon}`}>{telefon}</a></li>
             </ul>
           </div>
         </div>
@@ -38,9 +37,9 @@ const Footer = ({footer}) => {
       
       <div className="site-footer__bottom">
         <div className="container">
-          <Link href="https://atilla.dev/">
-          <p>DESIGN BY ATILLA - © 2022. ALL RIGHTS RESERVED.</p>
-          </Link>
+          <a href="https://atilla.dev/">         
+          <p>DESIGN BY ATILLA - © 2022. ALL RIGHTS RESERVED.</p>        
+          </a>
         </div>
       </div>
     </footer>
