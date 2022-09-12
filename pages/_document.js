@@ -6,8 +6,8 @@ export default function Document() {
     <Html>
       <Head>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>   
-      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-      <script src="https://kit.fontawesome.com/8d50ef5662.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer/>
+      <script src="https://kit.fontawesome.com/8d50ef5662.js" crossorigin="anonymous" defer/>
       </Head>
       <body>
         <Main />
