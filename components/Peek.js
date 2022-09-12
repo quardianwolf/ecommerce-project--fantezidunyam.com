@@ -1,6 +1,6 @@
 import React from 'react'
 import { urlFor, client } from '../lib/client';
-
+import Link from 'next/link';
 
 const peek = ({ peek}) => {
   const bg1 = {
@@ -14,10 +14,12 @@ const peek = ({ peek}) => {
         <h2 id="category-heading" className="text-2xl font-bold tracking-tight text-gray-900">
           Günün Seçimi
         </h2>
-        <a href="/tumurunler" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">       
-          Tüm Ürünlerimize Bakın
-          <span aria-hidden="true"> &rarr;</span>       
-        </a>
+        <Link href="/tumurunler" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">  
+          <a>   
+            Tüm Ürünlerimize Bakın
+            <span aria-hidden="true"> &rarr;</span>
+          </a>         
+        </Link>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
         <div className="group aspect-w-2 aspect-h-1 overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
